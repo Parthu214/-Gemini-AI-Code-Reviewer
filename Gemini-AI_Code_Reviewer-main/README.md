@@ -102,11 +102,13 @@ npm run dev
 
 **Output:**
 ```
-  ➜  Local:   http://localhost:3000/
-  ➜  Network: http://192.168.x.x:3000/
+  ➜  Local:   http://localhost:3002/
+  ➜  Network: http://192.168.56.1:3002/
 ```
 
-Open **http://localhost:3000/** in your browser! 🎉
+Open **http://localhost:3002/** in your browser! 🎉
+
+**Note:** The development server runs on **port 3002** for network accessibility. To change this, edit `vite.config.ts` and update the `port` value.
 
 ---
 
@@ -169,8 +171,11 @@ npm run preview
 ## 🌐 Accessing Your App
 
 ### Local Machine Access
-- **Browser:** `http://localhost:3000/`
-- **From Other Devices:** `http://<your-computer-ip>:3000/`
+- **Browser:** `http://localhost:3002/`
+- **From Other Devices:** `http://<your-computer-ip>:3002/`
+
+**Example with Network IP:**
+- If your IP is `192.168.56.1`, access: `http://192.168.56.1:3002/`
 
 ### Find Your Computer IP Address
 
