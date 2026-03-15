@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="data:image/svg+xml,<svg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'><defs><linearGradient id='bg_gradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'><stop offset='0%25' style='stop-color:%230A84FF; stop-opacity:1' /><stop offset='100%25' style='stop-color:%23007AFF; stop-opacity:1' /></linearGradient></defs><rect width='100' height='100' rx='20' fill='url(%23bg_gradient)'/><path d='M40 30 L25 50 L40 70' stroke='white' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round' opacity='0.8'/><path d='M60 30 L75 50 L60 70' stroke='white' stroke-width='8' fill='none' stroke-linecap='round' stroke-linejoin='round' opacity='0.8'/></svg>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Code Reviewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              // Based on Apple's Human Interface Guidelines
+              'light': {
+                'bg-base': '#F6F6F6',
+                'bg-elevated': 'rgba(255, 255, 255, 0.7)',
+                'separator': 'rgba(0, 0, 0, 0.1)',
+                'fill-primary': 'rgba(128, 128, 128, 0.2)',
+                'fill-secondary': 'rgba(128, 128, 128, 0.12)',
+                'label-primary': '#000000',
+                'label-secondary': 'rgba(60, 60, 67, 0.6)',
+                'label-tertiary': 'rgba(60, 60, 67, 0.3)',
+                'accent': '#007AFF',
+              },
+              'dark': {
+                'bg-base': '#1C1C1E',
+                'bg-elevated': 'rgba(44, 44, 46, 0.7)',
+                'separator': 'rgba(255, 255, 255, 0.15)',
+                'fill-primary': 'rgba(128, 128, 128, 0.3)',
+                'fill-secondary': 'rgba(128, 128, 128, 0.2)',
+                'label-primary': '#FFFFFF',
+                'label-secondary': 'rgba(235, 235, 245, 0.6)',
+                'label-tertiary': 'rgba(235, 235, 245, 0.3)',
+                'accent': '#0A84FF',
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+            fontSize: {
+              'xs': '0.75rem',  // 12px
+              'sm': '0.8125rem', // 13px
+              'base': '0.9375rem',// 15px
+              'lg': '1.125rem', // 18px
+              'xl': '1.25rem', // 20px
+            },
+            borderRadius: {
+              'lg': '0.75rem',
+              'xl': '1rem',
+              '2xl': '1.25rem',
+              '3xl': '1.5rem',
+            },
+            boxShadow: {
+              'subtle': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+              'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
+              'lg': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
+              'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.3s ease-out',
+              'slide-up-fade': 'slideUpFade 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUpFade: {
+                '0%': { opacity: '0', transform: 'translateY(24px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            }
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.20.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "jspdf": "https://esm.sh/jspdf@2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@1.4.1",
+    "jszip": "https://esm.sh/jszip@3.10.1"
+  }
+}
+</script>
+</head>
+  <body class="bg-light-bg-base dark:bg-dark-bg-base text-light-label-primary dark:text-dark-label-primary font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
